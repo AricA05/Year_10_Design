@@ -3,6 +3,7 @@ import tkinter as tk
 print ("Stage 1")
 #This gets printed in terminal when code is ran
 
+
 #root creates wndow in which prgram is in
 root = tk.Tk()
 
@@ -22,11 +23,6 @@ lab_instructions.pack()
 root window because it is specified as the parameter above. The must be done for ent_value and lab_results'''
 ent_value.pack()
 lab_results.pack()
-
-
-
-
-
 
 
 '''sets up a mainloop for program that allows it to stay open and wait to be used'''
