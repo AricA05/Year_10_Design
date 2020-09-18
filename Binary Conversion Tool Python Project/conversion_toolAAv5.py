@@ -1,6 +1,11 @@
 import tkinter as tk
 
-print("Stage 4")
+print("Stage 5")
+'''
+Base 2 to Base 10
+1010 
+1 * 2^3 + 0 * 2^2 + 1 * 2^1 + 0 * 2^0 = 1 * 8 + 0 * 4 + 1 * 2 + 0 * 1 = 10
+'''
 #This gets printed in terminal when program is opened
 
 #This function makes program process the entered value
@@ -8,42 +13,54 @@ print("Stage 4")
 #"process"will show up in terminal when code is ran to show that code is being excecuted 
 #NOTE:A parameter is the variable listed inside the parentheses in the function definition. An argument is the value that is sent to the function when it is called.
 def process(*args):
-
-
-	#ent_value is the entry widget (tk.Entry widget), .get acts on ent_value and gets the value
+	
+#ent_value is the entry widget (tk.Entry widget), .get acts on ent_value and gets the value
 	val = ent_value.get()
 	
-	#Checks to insure string of only 1's and 0's is entered in box
-	#this passes the val to the check01 function which is written approx 17 lines below
+
+
+	#Check to ensure string of 1's and 0's
 	check = check01(val)
-	#If check is true (only 0's and 1's)
+	
+
+
 	if (check == True):
-		val = remove0(val)#takes inputted value passes it to "def remove0 function"
-		#Window display will show Valid input
-		lab_results.config(text = "VALID INPUT"+val)
-	else: #If it is not 0's and 1's it will show invalid
+		#removes left most 0 val gets passed to "def remove0 function"
+		val = remove0(val)
+		#converts from base 2 to base 10
+		result = base2to10(val)
+		#updates display with conversion
+		lab_results.config(text = str(val) + " --> " + str(result))
+	else:
 		lab_results.config(text = "INVALID")
 
-	#takes entry widget and delete everything from first character to lat character (essentially when enter is hit the box resets to blank)
 	ent_value.delete(0,tk.END)
+
+def base2to10(str):
+
+	n = 0
+	total = 0
+
+	for i in range(len(str) - 1, -1, -1):
+		total = total + int(str[i]) * 2**n
+		n = n + 1
+
+	return total
 
 #function for removing left most 0's
 def remove0(str):
 
 	'''012345 -- this is the index number of the string (6 index values total in this example)
-	   000101 -- this is the inputted string/value, the "for i in range" will identify the first "1" and return/enter once identified in this case, it will take the last three digits'''
+ 	   000101 -- this is the inputted string/value, the "for i in range" will identify the first "1" and return/enter once identified in this case, it will take the last three digits'''
 
 #examines each index of the number inputted in the string and determines when the first 1 appears. If no 1's are found it has to be a zero. 
 	for i in range(0, len(str),1):
-		#if str at index "i" is equivalent to a "1" (if there is a number "1" in the string...)
+	#if str at index "i" is equivalent to a "1" (if there is a number "1" in the string...)
 		if (str[i] == "1"):
-			return str[i:len(str)]#returns index "i" to the length of the string (returns whatever number where after the first "1")
-
+			return str[i:]#returns index "i" to the length of the string (returns whatever number where after the first "1")
+	
 	#if you make it past this loop:		
 	return str
-
-
-
 
 #Function for checking if value is 1's and 0's only
 def check01(str):
@@ -71,6 +88,7 @@ ent_value = tk.Entry(root)
 lab_results = tk.Label(root, text = "--")
 '''third widget: label widget, creates another label'''
 '''Attached to root window, name parameter is used for results'''
+
 
 #Configure Widgets
 

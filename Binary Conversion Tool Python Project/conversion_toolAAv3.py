@@ -50,8 +50,8 @@ ent_value = tk.Entry(root)
 '''second widget: entry widget, goes into tk module and creates entry box'''
 '''Only attached to root window, does not need any name parameters'''
 lab_results = tk.Label(root, text = "--")
-'''takes lab_instructions widget and packs it into root window, it knows to pack it into
-root window because it is specified as the parameter above. The must be done for ent_value and lab_results'''
+'''third widget: label widget, creates another label'''
+'''Attached to root window, name parameter is used for results'''
 
 #Configure Widgets
 
