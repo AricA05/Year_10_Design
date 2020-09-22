@@ -1,6 +1,6 @@
 import requests
 import json
-import tkinter as tk
+from pprint import pprint
 
 
 #Get Key
@@ -17,3 +17,4 @@ resp = requests.get('http://data.fixer.io/api/latest?access_key='+key)
 #Converts response to JSON
 data = resp.json()
 
+pprint(data)
