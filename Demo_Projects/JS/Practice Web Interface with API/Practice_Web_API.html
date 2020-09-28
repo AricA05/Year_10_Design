@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<p>First Name</p>
+<input type = "text" id = "fname">
+
+<p>Last Name</p>
+<input type = "text" id = "lname">
+
+<input type = "submit" onclick = "clicked()">
+
+<div id = "output">
+
+
+
+
+
+</div>
+
+
+
+
+<script>
+	
+function clicked (){
+	console.log("random")
+	fname = document.getElementById("fname").value
+	console.log(fname)
+
+	lname = document.getElementById("lname").value
+	console.log(lname)
+
+
+	fullname = fname + " "  + lname
+	console.log(fullname)
+
+	var result = [1,2,3]
+
+
+	 fetch("https://api.diversitydata.io/?fullname=" + fullname)
+  	.then((response) => response.json())
+  	.then (function(data) {
+  		result = data
+  		console.log("IN FETCH: ",result)
+
+
+  		output = document.getElementById("output")	
+  		pname = document.createElement("p")//create new ptag 
+  		pname.innerHTML = result ["fullname"]//adds content to tag
+  		output.append(pname)//puts tag on webpage 
+
+
+  	});
+
+
+
+
+
+
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+
