@@ -1,7 +1,4 @@
 from tkinter import * #GUI package
-import sqlite3 as sq #For tables and database
-import datetime
-
 
 window = Tk()
 window.title("Practice Labeling and Title's") 
