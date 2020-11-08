@@ -7,20 +7,22 @@ import os
  
 def signup():
     global signup_screen
-    signup_screen = Toplevel(main_screen)
-    signup_screen.title("Sign Up")
-    signup_screen.geometry("300x250")
+    signup_screen = Toplevel(main_screen)#Top level is used simply as a frame, so it supports other pop up windows
+    signup_screen.title("Sign Up")#title 
+    signup_screen.geometry("300x250")#sizing of screen
  
     global username
     global password
     global username_entry
     global password_entry
+
+    #sets text variables
     username = StringVar()
     password = StringVar()
  
     Label(signup_screen, text="Please enter details below", bg="blue", fg = "white").pack()
-    username_label = Label(signup_screen, text="Create Username").pack()
-    username_entry = Entry(signup_screen, textvariable=username)
+    username_label = Label(signup_screen, text="Create Username").pack()#instructions for user
+    username_entry = Entry(signup_screen, textvariable=username)#entry idget used to display single line of text entered by user
     username_entry.pack()
     password_label = Label(signup_screen, text="Create Password").pack()
     password_entry = Entry(signup_screen, textvariable=password, show='*')
@@ -60,31 +62,40 @@ def login():
 # Implementing event on register button
  
 def signup_user():
- 
+    #get inputted username and password
     username_info = username.get()
     password_info = password.get()
- 
+    #opens file in write mode
     file = open(username_info, "w")
+    #write username and password information into file
     file.write(username_info + "\n")
     file.write(password_info)
     file.close()
- 
+    
+    #clears inputted username and password
     username_entry.delete(0, END)
     password_entry.delete(0, END)
- 
+    
+    #label shows signup success on screen
     Label(signup_screen, text="Registration Success - Please Close Window and Login", fg="green", font=("calibri", 11)).pack()
  
 # Implementing event on login button 
  
 def login_verify():
+    #gets username and password
     username1 = username_verify.get()
     password1 = password_verify.get()
+    #clears fields
     username_login_entry.delete(0, END)
     password_login_entry.delete(0, END)
- 
+    
+    #The method listdir() returns a list containing the names of the entries in the directory given by path
     list_of_files = os.listdir()
+    #defining verification's conditions 
     if username1 in list_of_files:
-        file1 = open(username1, "r")
+        file1 = open(username1, "r")#open the file in read/txt mode
+        
+        #reads file, splitlines() on the "newline" character, so the newline character is not left hanging at the end of each line
         verify = file1.read().splitlines()
         if password1 in verify:
             window()
@@ -127,13 +138,14 @@ def unknown_user():
  
 def main_screen():
     global main_screen
-    main_screen = Tk()
-    main_screen.geometry("300x250")
-    main_screen.title("Account Login")
-    Label(text="Select Your Choice", bg="blue", width="300", height="2", font=("Calibri", 13)).pack()
-    Label(text="").pack()
-    Button(text="Login", height="2", width="30", command = login).pack()
-    Label(text="").pack()
+    main_screen = Tk() #creates mainscreen window
+    main_screen.geometry("300x250") #config's window size
+    main_screen.title("Account Login")#window title
+    #create form label, tells user to eithr login or register
+    Label(text="Select Your Choice", bg="blue", fg="white", width="300", height="2", font=("Calibri", 13)).pack()
+    #create login button
+    Button(text="Login", height="2", width="30", command = login).pack()  
+    #create register button
     Button(text="Register", height="2", width="30", command=signup).pack()
  
     main_screen.mainloop()
