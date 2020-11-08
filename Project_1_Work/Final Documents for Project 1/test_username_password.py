@@ -2,7 +2,8 @@
  
 from tkinter import *
 import os
- 
+import sqlite3 as sq #For tables and database
+import datetime
 # Designing window for registration
  
 def signup():
@@ -108,6 +109,11 @@ def login_verify():
  
 def window():
     global window
+    import Project1Final
+    
+
+
+'''global window
     window = Toplevel(login_screen)#window
     window.title("Welcome!") #winodw title 
     window.geometry('700x500+0+0') #dimensions for window size
@@ -122,7 +128,7 @@ def window():
     L3 = Label(window, text = "Month (mm)", font=("arial",18)).place(x=10,y=200)
     L4 = Label(window, text = "Year (yyyy)", font=("arial",18)).place(x=10,y=250)
     L5 = Label(window, text = "Reps per set ", font=("arial",18)).place(x=10,y=300)
-    L6 = Label(window, text = "Sets completed", font=("arial",18)).place(x=10,y=350)
+    L6 = Label(window, text = "Sets completed", font=("arial",18)).place(x=10,y=350)'''
 
 
 def invalid_password():
