@@ -152,7 +152,7 @@ def main_screen():
     #create login button
     Button(text="Login", height="2", width="30", command = login).pack()  
     #create register button
-    Button(text="Register", height="2", width="30", command=signup).pack()
+    Button(text="Sign Up", height="2", width="30", command=signup).pack()
  
     main_screen.mainloop()
  
