@@ -37,7 +37,7 @@ Reps = StringVar(window)
 Sets = StringVar(window)
 
 #List of names for drop down list
-Exercise = {'Plank'}
+Exercise = {'Plank', 'Lunge', 'BicepCurl', 'Other'}
 
 exercised = OptionMenu(window, exercise, *Exercise) #For 1st drop down list 
 exercised.place(x=220,y=105)
@@ -95,7 +95,7 @@ def record():
     c.execute('SELECT * FROM ' +exercisedb.get()) #Select from which ever exercise is selected
 
     frame = Frame(window)
-    frame.place(x= 500, y = 150)
+    frame.place(x= 500, y = 250)
     
     Lb = Listbox(frame, height = 8, width = 25,font=("arial", 12)) 
     Lb.pack(side = LEFT, fill = Y)
@@ -114,10 +114,10 @@ def record():
         Lb.insert(1,row) # Inserts record row by row in list box
 
     L7 = Label(window, text = exercisedb.get()+ '      ', 
-               font=("arial", 16)).place(x=500,y=100) # Title of data table of exercise/workout file, tilte changes depending on exercise chosen
+               font=("arial", 16)).place(x=500,y=190) # Title of data table of exercise/workout file, tilte changes depending on exercise chosen
 
     L8 = Label(window, text = "They are ordered from most recent", 
-               font=("arial", 16)).place(x=500,y=350)
+               font=("arial", 16)).place(x=500,y=220)
     con.commit()
 
 button_1 = Button(window, text="Submit",command=get)
