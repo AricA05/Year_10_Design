@@ -130,5 +130,31 @@ button_3 = Button(window,text="Open File",command=record)
 button_3.place(x=10,y=500)
 
 
+
+import requests
+
+
+def onclick1():
+    results = requests.get('https://wger.de/api/v2/muscle/')
+    results_json = results.json()
+    for i in results_json['results']:
+        print(i['name'])
+
+
+
+def onclick2():
+    results = requests.get('https://wger.de/api/v2/exercisecomment/?limit=20&offset=60')
+    results_json = results.json()
+    for p in results_json['results']:
+        print(p['comment'])
+
+
+btnapi1 = Button(window, text = "Click for Muscle Categories", fg = "green", command = onclick1)
+btnapi1.place(x=480,y=100)
+btnapi2 = Button(window, text = "Click for tips on how to exercise these muscles", fg = "blue", command = onclick2)
+btnapi2.place(x=480,y=150)
+
+
+
 window.mainloop() #mainloop() = make sure that window stays open
 
