@@ -60,7 +60,7 @@ def login():
 def window():
     labsuccess = tk.Label(root, text = "Login Successful", fg = "green")
     labsuccess.pack()
-    import Project1Final
+    import homepage
 
 
 
@@ -74,15 +74,7 @@ def unknown_user():
     labunknowuser.pack()
 
 
-
-
-
-
-
-
-
-
-
+        
 root = tk.Tk()
 
 labun = tk.Label(root,text = "User Name: ")
