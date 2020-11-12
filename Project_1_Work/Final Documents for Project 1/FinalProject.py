@@ -35,8 +35,9 @@ def login():
     username1 = entun.get() + ".txt"
     password1 = entpw.get() 
     
-    print(username1)
-    print(password1)
+    #unhashtag the below lines to show that program (in terminal) prints the username and password, essentially shows how it reads each line if code
+    #print(username1)
+    #print(password1)
 
     #clears fields
     entun.delete(0, "end")
@@ -50,7 +51,8 @@ def login():
         
         #reads file, splitlines() on the "newline" character, so the newline character is not left hanging at the end of each line
         verify = file1.read().splitlines()
-        print(verify)
+        #unhashtag the below line to have terminal print the method of how it verifies the username and password, using the splitline
+        #print(verify)
         if password1 in verify:
             window()
  
