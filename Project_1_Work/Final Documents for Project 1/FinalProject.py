@@ -12,7 +12,7 @@ def register():
     username_info = entun.get()
     password_info = entpw.get()
     #opens file in write mode
-    file = open(username_info, "w")
+    file = open(username_info + ".txt", "w")
     #write username and password information into file
     file.write(username_info + "\n")
     file.write(password_info)
@@ -32,9 +32,12 @@ def login():
     #password_verify = entpw.get()
 
     #gets username and password
-    username1 = entun.get()
-    password1 = entpw.get()
+    username1 = entun.get() + ".txt"
+    password1 = entpw.get() 
     
+    print(username1)
+    print(password1)
+
     #clears fields
     entun.delete(0, "end")
     entpw.delete(0, "end")
@@ -47,6 +50,7 @@ def login():
         
         #reads file, splitlines() on the "newline" character, so the newline character is not left hanging at the end of each line
         verify = file1.read().splitlines()
+        print(verify)
         if password1 in verify:
             window()
  
