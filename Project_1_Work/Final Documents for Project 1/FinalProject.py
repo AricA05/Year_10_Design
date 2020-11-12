@@ -28,9 +28,7 @@ def register():
 
 
 def login():
-    #username_verify = entun.get()
-    #password_verify = entpw.get()
-
+    
     #gets username and password
     username1 = entun.get() + ".txt"
     password1 = entpw.get() 
