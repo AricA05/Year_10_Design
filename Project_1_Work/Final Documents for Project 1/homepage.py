@@ -3,12 +3,13 @@ import sqlite3 as sq #For tables and database
 import datetime
 
 window = Tk() #window
-window.title("Welcome!") #winodw title 
+window.title("Welcome!") #window title 
 window.geometry('800x600+0+0') #dimensions for window size
 header = Label(window, text="Workout Tracker", font=("arial",30,"bold"), bg="orange").pack()
 #Label type = header with font and colour modifications
 
 window.configure(bg='lightblue') #configures background colour (bg)
+
 
 con = sq.connect('workout.db') #sqlite database 
 c = con.cursor() #sqlite command-this connects code to database

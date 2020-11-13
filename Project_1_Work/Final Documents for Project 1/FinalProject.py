@@ -1,6 +1,5 @@
 #import modules
- 
-import tkinter as tk
+ import tkinter as tk
 import os
 import sqlite3 as sq #For tables and database
 import datetime
@@ -52,7 +51,7 @@ def login():
         #unhashtag the below line to have terminal print the method of how it verifies the username and password, using the splitline
         #print(verify)
         if password1 in verify:
-            window()
+            home()
  
         else:
             invalid_password()
@@ -61,7 +60,7 @@ def login():
 
 
 
-def window():
+def home():
     labsuccess = tk.Label(root, text = "Login Successful", fg = "green")
     labsuccess.pack()
     import homepage
