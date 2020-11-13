@@ -139,7 +139,7 @@ def onclick1():
     results = requests.get('https://wger.de/api/v2/muscle/')
     results_json = results.json()
     for i in results_json['results']:
-        print(i['name'])
+        print(i['name'])#name is the "Key", terminal output are the "Valves"
 
 
 
@@ -147,7 +147,7 @@ def onclick2():
     results = requests.get('https://wger.de/api/v2/exercisecomment/?limit=20&offset=60')
     results_json = results.json()
     for p in results_json['results']:
-        print(p['comment'])
+        print(p['comment'])#Comment is the "Key", terminal output are the "valves"
 
 
 btnapi1 = Button(window, text = "Click for Muscle Categories", fg = "green", command = onclick1)
