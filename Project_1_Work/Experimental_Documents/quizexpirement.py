@@ -9,8 +9,14 @@ def inst():
 
 def start():
     def submit():
-        answer = tk.Label(root, text = "IF YOU ANSWERED:1.) string, YOU ARE CORRECT")
-        answer.pack()
+        #answer = tk.Label(root, text = "IF YOU ANSWERED:1.) string, YOU ARE CORRECT")
+        #answer.pack()
+        check = ans.get()
+        b = tk.Label(root, text="2.) string")
+
+        if check == b:
+            print("correct")
+
         #or do whatever you like with this
 
     root = tk.Tk()
