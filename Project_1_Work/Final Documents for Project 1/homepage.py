@@ -1,7 +1,7 @@
 from tkinter import * #GUI package
 import sqlite3 as sq #For tables and database
 import datetime
-
+import os
 window = Tk() #window
 window.title("Welcome!") #window title 
 window.geometry('800x600+0+0') #dimensions for window size
@@ -159,9 +159,9 @@ btnapi2.place(x=480,y=150)
 def showquiz():
     import v2quizexpirement
 
-
-btnquiz = Button(window, text = "TAKE QUIZ TO SEE YOUR PROGRESS",fg="Red", command = showquiz)
-btnquiz.place(x=500,y=500)
+Photo = PhotoImage(file = r"linegraph.png")
+btnquiz = Button(window, text = "TAKE QUIZ TO SEE YOUR PROGRESS",fg="Red", height=20,highlightbackground = "Orange", highlightthickness = 5, image=Photo, compound = "bottom", command = showquiz)
+btnquiz.place(x=500,y=450)
 
 window.mainloop() #mainloop() = make sure that window stays open
 
