@@ -150,18 +150,24 @@ def onclick2():
         print(p['comment'])#Comment is the "Key", terminal output are the "valves"
 
 
-btnapi1 = Button(window, text = "Click for Muscle Categories", fg = "green", command = onclick1)
+Photo_MuscleCategories = PhotoImage(file = r"MuscleCategories.png")
+btnapi1 = Button(window, text = "Click for Muscle Categories", fg = "green", image=Photo_MuscleCategories, compound="bottom", command = onclick1)
 btnapi1.place(x=480,y=100)
-btnapi2 = Button(window, text = "Click for tips on how to exercise these muscles", fg = "blue", command = onclick2)
-btnapi2.place(x=480,y=150)
+
+
+Photo_Exercises = PhotoImage(file = r"exercises.png")
+btnapi2 = Button(window, text = "Click for tips on how to exercise these muscles", fg = "blue",image=Photo_Exercises, compound="bottom", command = onclick2)
+btnapi2.place(x=480,y=180)
 
 
 def showquiz():
     import v2quizexpirement
 
-Photo = PhotoImage(file = r"linegraph.png")
-btnquiz = Button(window, text = "TAKE QUIZ TO SEE YOUR PROGRESS",fg="Red", height=20,highlightbackground = "Orange", highlightthickness = 5, image=Photo, compound = "bottom", command = showquiz)
-btnquiz.place(x=500,y=450)
+Photo_Progress = PhotoImage(file = r"progressgraph.png")
+btnquiz = Button(window, text = "TAKE QUIZ TO SEE YOUR PROGRESS",fg="Red", height=20,highlightbackground = "Orange", highlightthickness = 5, image=Photo_Progress, compound = "bottom", command = showquiz)
+btnquiz.place(x=480,y=450)
+
+
 
 window.mainloop() #mainloop() = make sure that window stays open
 
