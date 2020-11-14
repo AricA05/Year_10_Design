@@ -156,6 +156,12 @@ btnapi2 = Button(window, text = "Click for tips on how to exercise these muscles
 btnapi2.place(x=480,y=150)
 
 
+def showquiz():
+    import v2quizexpirement
+
+
+btnquiz = Button(window, text = "TAKE QUIZ TO SEE YOUR PROGRESS",fg="Red", command = showquiz)
+btnquiz.place(x=500,y=500)
 
 window.mainloop() #mainloop() = make sure that window stays open
 
