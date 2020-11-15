@@ -77,7 +77,7 @@ def unknown_user():
     labunknowuser.pack()
 
 
-        
+#creates main screen       
 root = tk.Tk()
 
 labun = tk.Label(root,text = "User Name: ")
