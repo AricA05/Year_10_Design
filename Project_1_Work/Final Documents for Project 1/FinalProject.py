@@ -94,6 +94,7 @@ entpw.pack()
 
 #This button makes a new user
 btnRegister = tk.Button(root,text = "Register", fg = "blue",command = register)
+#This button logs user in
 btnLogin = tk.Button(root, text = "Login", fg="green", command = login)
 
 btnRegister.pack()
