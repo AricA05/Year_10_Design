@@ -4,7 +4,7 @@ import datetime
 import os
 window = Tk() #window
 window.title("Welcome!") #window title 
-window.geometry('800x600+0+0') #dimensions for window size
+window.geometry('820x600+0+0') #dimensions for window size
 header = Label(window, text="Workout Tracker", font=("arial",30,"bold"), bg="orange").pack()
 #Label type = header with font and colour modifications
 
@@ -96,7 +96,7 @@ def record():
     c.execute('SELECT * FROM ' +exercisedb.get()) #Select from which ever exercise is selected
 
     frame = Frame(window)
-    frame.place(x= 500, y = 250)
+    frame.place(x= 500, y = 270)
     
     Lb = Listbox(frame, height = 8, width = 25,font=("arial", 12)) 
     Lb.pack(side = LEFT, fill = Y)
@@ -115,10 +115,10 @@ def record():
         Lb.insert(1,row) # Inserts record row by row in list box
 
     L7 = Label(window, text = exercisedb.get()+ '      ', 
-               font=("arial", 16)).place(x=500,y=190) # Title of data table of exercise/workout file, tilte changes depending on exercise chosen
+               font=("arial", 16)).place(x=500,y=210) # Title of data table of exercise/workout file, tilte changes depending on exercise chosen
 
     L8 = Label(window, text = "They are ordered from most recent", 
-               font=("arial", 16)).place(x=500,y=220)
+               font=("arial", 16)).place(x=500,y=240)
     con.commit()
 
 button_1 = Button(window, text="Submit",command=get)
@@ -150,22 +150,19 @@ def onclick2():
         print(p['comment'])#Comment is the "Key", terminal output are the "valves"
 
 
-Photo_MuscleCategories = PhotoImage(file = r"MuscleCategories.png")
-btnapi1 = Button(window, text = "Click for Muscle Categories", fg = "green", image=Photo_MuscleCategories, compound="bottom", command = onclick1)
+btnapi1 = Button(window, text = "Click for Muscle Categories", fg = "blue",highlightbackground="Orange",command = onclick1)
 btnapi1.place(x=480,y=100)
 
 
-Photo_Exercises = PhotoImage(file = r"exercises.png")
-btnapi2 = Button(window, text = "Click for tips on how to exercise these muscles", fg = "blue",image=Photo_Exercises, compound="bottom", command = onclick2)
+btnapi2 = Button(window, text = "Click for tips on how to exercise these muscles", fg = "orange",highlightbackground="Orange",command = onclick2)
 btnapi2.place(x=480,y=180)
 
 
 def showquiz():
     import v2quizexpirement
 
-Photo_Progress = PhotoImage(file = r"progressgraph.png")
-btnquiz = Button(window, text = "TAKE QUIZ TO SEE YOUR PROGRESS",fg="Red", height=20,highlightbackground = "Orange", highlightthickness = 5, image=Photo_Progress, compound = "bottom", command = showquiz)
-btnquiz.place(x=480,y=450)
+btnquiz = Button(window, text = "TAKE QUIZ TO SEE EVALUATE YOUR PROGRESS",fg="blue", height=5, highlightbackground = "Orange", highlightthickness = 5, command = showquiz)
+btnquiz.place(x=480,y=430)
 
 
 

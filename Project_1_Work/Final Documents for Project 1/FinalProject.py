@@ -93,8 +93,8 @@ labpw.pack()
 entpw.pack()
 
 #This button makes a new user
-btnRegister = tk.Button(root,text = "Register", command = register)
-btnLogin = tk.Button(root, text = "Login", command = login)
+btnRegister = tk.Button(root,text = "Register", fg = "blue",command = register)
+btnLogin = tk.Button(root, text = "Login", fg="green", command = login)
 
 btnRegister.pack()
 btnLogin.pack()
