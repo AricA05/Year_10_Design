@@ -159,7 +159,7 @@ btnapi2.place(x=480,y=180)
 
 
 def showquiz():
-    import v2quizexpirement
+    import quizsection
 
 btnquiz = Button(window, text = "TAKE QUIZ TO SEE EVALUATE YOUR PROGRESS",fg="blue", height=5, highlightbackground = "Orange", highlightthickness = 5, command = showquiz)
 btnquiz.place(x=480,y=430)

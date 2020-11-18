@@ -7,6 +7,7 @@ def main():
     notebook.add(frame2, text="Question 2")
     notebook.add(frame3, text="Question 3")
     notebook.add(frame4, text="Question 4")
+    notebook.add(frame5, text="What Do Your Results Mean?")
 
     tk.Label(frame1, text="Question: How many BicepCurl's per set do you typically do?").grid(row=1, column=3)
     tk.Button(frame1, text="A)10-12", command=add1).grid(row=4, column=2)
@@ -28,6 +29,11 @@ def main():
     tk.Button(frame4, text="A)10-12", command=add1v4).grid(row=4, column=2)
     tk.Button(frame4, text="B)15-20", command=add2v4).grid(row=4, column=3)
     tk.Button(frame4, text="C)21+", command=add3v4).grid(row=4, column=5)
+
+
+    tk.Label(frame5, text="If you answer 'A' to two or more questions, you are on a slow track to rehab").grid(row=1, column=3)
+    tk.Label(frame5, text="If you answer 'B' to two or more questions, you are on a good track, but there is room for improvement").grid(row=3, column=3)
+    tk.Label(frame5, text="If you answer 'C' to two or more questions, you are on an excellent track and your rehab should go faster than expected").grid(row=5, column=3)
 
     notebook.pack()
 
@@ -110,6 +116,7 @@ frame1 = ttk.Frame(notebook)
 frame2 = ttk.Frame(notebook)
 frame3 = ttk.Frame(notebook)
 frame4 = ttk.Frame(notebook)
+frame5 = ttk.Frame(notebook)
 
 main()
 
