@@ -4,7 +4,7 @@ import datetime
 import os
 window = Tk() #window
 window.title("Welcome!") #window title 
-window.geometry('820x600+0+0') #dimensions for window size
+window.geometry('855x600+0+0') #dimensions for window size
 header = Label(window, text="Workout Tracker", font=("arial",30,"bold"), bg="orange").pack()
 #Label type = header with font and colour modifications
 
@@ -161,7 +161,7 @@ btnapi2.place(x=480,y=180)
 def showquiz():
     import quizsection
 
-btnquiz = Button(window, text = "TAKE QUIZ TO SEE EVALUATE YOUR PROGRESS",fg="blue", height=5, highlightbackground = "Orange", highlightthickness = 5, command = showquiz)
+btnquiz = Button(window, text = "CLICK FOR QUIZ TO SEE EVALUATE YOUR PROGRESS",fg="blue", height=5, highlightbackground = "Orange", highlightthickness = 5, command = showquiz)
 btnquiz.place(x=480,y=430)
 
 
