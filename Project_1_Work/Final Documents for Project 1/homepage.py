@@ -161,7 +161,7 @@ btnapi2.place(x=480,y=180)
 def showquiz():
     import quizsection
 
-btnquiz = Button(window, text = "CLICK FOR QUIZ TO SEE EVALUATE YOUR PROGRESS",fg="blue", height=5, highlightbackground = "Orange", highlightthickness = 5, command = showquiz)
+btnquiz = Button(window, text = "CLICK FOR QUIZ TO EVALUATE YOUR PROGRESS",fg="blue", height=5, highlightbackground = "Orange", highlightthickness = 5, command = showquiz)
 btnquiz.place(x=480,y=430)
 
 
