@@ -46,8 +46,8 @@ def login():
     if username1 in list_of_files:
         file1 = open(username1, "r")#open the file in read/txt mode
         
-        #reads file, splitlines() on the "newline" character, so the newline character is not left hanging at the end of each line
-        verify = file1.read().splitlines()
+        #file1.read, reads the contents of the of the result 
+        verify = file1.read().splitlines()#splitslines is used because the password is on a spearate line since "\n" was used
         #unhashtag the below line to have terminal print the method of how it verifies the username and password, using the splitline
         #print(verify)
         if password1 in verify:
