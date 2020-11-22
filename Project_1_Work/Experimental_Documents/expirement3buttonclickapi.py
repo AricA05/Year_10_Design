@@ -3,6 +3,7 @@ import requests
 
 
 def onclick1():
+	#'requests' is able to decode json and turn it into python3 datatype
 	results = requests.get('https://wger.de/api/v2/muscle/')
 	results_json = results.json()
 	for i in results_json['results']:
@@ -11,7 +12,9 @@ def onclick1():
 
 
 def onclick2():
+	#'requests' is able to decode json and turn it into python3 datatype
 	results = requests.get('https://wger.de/api/v2/exercisecomment/?limit=20&offset=60')
+	#defining the data that the belwo loop is going to break-down - in json format - 'requests' is defined above
 	results_json = results.json()
 	for p in results_json['results']:
 		print(p['comment'])

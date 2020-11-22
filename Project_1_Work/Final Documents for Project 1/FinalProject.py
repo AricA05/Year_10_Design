@@ -28,13 +28,10 @@ def register():
 
 def login():
     
-    #gets username and password
+    #definining functions for when they are used (when 'username1 or password1') is typed 
     username1 = entun.get() + ".txt"
     password1 = entpw.get() 
-    
-    #unhashtag the below lines to show that program (in terminal) prints the username and password, essentially shows how it reads each line if code
-    #print(username1)
-    #print(password1)
+#whenever 'username1 or password1' is seen in the below code, it is executing the .get() function
 
     #clears fields
     entun.delete(0, "end")
@@ -50,6 +47,7 @@ def login():
         verify = file1.read().splitlines()#splitslines is used because the password is on a spearate line since "\n" was used
         #unhashtag the below line to have terminal print the method of how it verifies the username and password, using the splitline
         #print(verify)
+        #if the inputted password is confirmed to the corresponding username in the verify function 
         if password1 in verify:
             home()
  
