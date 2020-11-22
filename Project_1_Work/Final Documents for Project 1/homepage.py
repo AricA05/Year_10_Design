@@ -98,13 +98,14 @@ def clear():
 
 #executed when user wants to 'open file'/retrieve their inputted data    
 def get():
+    #selects all data from whichever exercise is selected (.get())
     c.execute('SELECT * FROM ' +exercisedb.get()) #Select from which ever exercise is selected
     #this is the frame for the listbox, it is placed in the main window
     frame = Frame(window)
     frame.place(x= 500, y = 270)
     #creating listbox widget, dimesions, placement 
     Lb = Listbox(frame, height = 8, width = 25,font=("arial", 12)) 
-    Lb.pack(side = LEFT, fill = Y)
+    Lb.pack(side = LEFT, fill = Y) #it is on y axis (horizontal opposed to x underneath)
     #tkinter Scrollbar widget creation, this goes on side of 'frame'
     scroll = Scrollbar(frame, orient = VERTICAL) #scrollbar lists box for when entries exceed size of list box
     scroll.config(command = Lb.yview)
