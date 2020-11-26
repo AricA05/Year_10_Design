@@ -1,9 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+
+
+
+  <title>Index_Homepage_thing_from_class</title>
+
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<style>
+
+  body {
+    margin-top: 20px;
+  }
+</style>            
 </head>
 <body>
+<div class = "container">
+  
+
+    <a class="waves-effect waves-light btn">Once</a>
+
+  <div class = "display">
+    <p>Once Data Display</p>
+  </div>
+   <input placeholder="Input Name" id="name" type="text" class="validate">
+   <label for="name">Name</label>
+   <input placeholder="Input Food" id="food" type="text" class="validate">
+   <label for="name">Food</label>
+   <br/>
+   <br/>
+  <a id = "enter_data" class="waves-effect waves-light btn">Submit</a>
+   <br/>
+   <br/>
+   <div id = "live">
+    <p>Live Update</p>
+   </div>
+
+ </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/
@@ -38,18 +76,33 @@ firebasejs/8.1.1/firebase-database.js"></script>
 
   var database = firebase.database();
 
-	function writeUserData(userId, name, email) {
+	function writeUserData(userId, name, food) {
+
+    data = {
+
+      name: name,
+      food: food,
+
+
+    }
 		
-		database.ref('users/' + userId).set({
-			username: name,
-			email: email,
-			
-		});
+		database.ref('Users/' + userId).set(data);
+  }
+  console.log('test')
+  writeUserData("03","Edwin","Ramen")
+  writeUserData("04","Noah","Har Gow")
 
-	}
 
-	writeUserData("01","test","user1@test.com")
+  var userUpdate = database.ref('Users/')
 
+  function onChange(snapshot) {
+
+    const data = snapshot.val();
+    console.log(data)
+
+  }
+
+  userUpdate.on('value',onChange);
 
 </script>
 </body>
