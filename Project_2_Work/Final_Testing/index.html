@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="index.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+
+<section class="company-heading intro-type" id="parallax-one">
+   <div class="container">
+      <div class="row product-title-info">
+         <div class="col-md-12">
+            <h1>
+               FIND YOUR COURT
+            </h1>
+            <a class="ct-btn-scroll ct-js-btn-scroll" href="#section2"><img alt="Arrow Down Icon" src="images/tennis-ball.png"></a>
+         </div>
+      </div>
+   </div>
+   <div class="parallax" id="parallax-cta" style="background-image:url(https://www.myactivesg.com/-/media/SSC/Consumer/Images/Sports/Tennis/GC111_1_Wikimedia.jpg?la=en&hash=0CE79CD24317DE94C8794514B5DC67325F2DB302);">
+      &nbsp;
+   </div>
+</section>
+<div class="main">
+   <section id="section2">
+      <div class="container jumbo">
+         <div class="jumbotron">
+            <h2>Use this map</h2>
+            <p>Now u can search for courts</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+         </div>
+   </section>
+   </div>
+</div>
+
+
+</body>
+</html>
