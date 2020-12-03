@@ -19,9 +19,11 @@
 }
 
 .nav-link{
-	color:#5cd65c !important;
+	
 	font-weight: 600;
 	margin-left: 30px;
+  font-family: Rancho
+
 }
 
 .wrapper{
@@ -37,13 +39,17 @@
 }
 
 .feature-box h1{
-	margin-top: 20%;
+	margin-top: 10%;
 	color:#5cd65c;
+  font-family: 'Abril Fatface', cursive;
 }
 
 .feature-box p{
 	margin:50px auto;
 	color:#555;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+
 }
 
 .feature-box a{
