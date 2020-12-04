@@ -140,6 +140,24 @@
   width:35px;
 }
 
+.wave-img{
+  width:100%;
+  position:absolute;
+  display:block;
+  top:9%;
+  z-index:-1;
+  opacity:0.5;
+
+}
+
+.wave-imgno2{
+  width:100%;
+  position:absolute;
+  display:block;
+  top:70%;
+  z-index:-1;
+  opacity:0.5;
+}
 section {
   display: flex;
   flex-direction: column;
