@@ -3,25 +3,25 @@ html, body, img, figure {
 }
 
 
-.ct-map__section .container {
+.ct-mainmap__section .container {
     margin: auto;
 }
 .ct-u-padding-bottom-40 {
     margin: auto;
 }
-.ct-map {
+.ct-mainmap {
     position: relative;
     width: 562px;
     margin-top: 55px;
 }
 
-.ct-city.stone {
+.ct-ward17.stone {
     top: 15%;
     left: 37%;
 }
 
 .ct-popup {
-    background: #1aa6e2;
+    background: red;
     border-radius: 50%;
     width: 334px;
     height: 334px;
@@ -44,19 +44,19 @@ html, body, img, figure {
 }
 
 
-.ct-city__button .ct-close {
+.ct-ward17__button .ct-close {
     display: none;
 }
 
-.ct-city.active .ct-city__button .ct-close {
+.ct-ward17.active .ct-ward17__button .ct-close {
     display: block;
 }
 
-.ct-city.active .ct-city__button .ct-plus, .ct-city.active .ct-city__button .ct-city__name {
+.ct-ward17.active .ct-ward17__button .ct-plus, .ct-ward17.active .ct-ward17__button .ct-ward17__name {
     display: none;
 }
 
-.ct-city__name {
+.ct-ward17__name {
     display: block;
     font-weight: bold;
     text-transform: uppercase;
@@ -71,29 +71,29 @@ html, body, img, figure {
 }
 
 
-.ct-city {
+.ct-ward17 {
     position: absolute;
     width: 334px;
     height: 334px;
 }
 
-.ct-city__button {
+.ct-ward17__button {
     background: none;
     border: none;
     z-index: 30;
     position: absolute;
     top: 46%;
     left: 12px;
-	outline: none;
+    outline: none;
 }
 
 
-.ct-city.active {
-	z-index: 30;
+.ct-ward17.active {
+    z-index: 30;
 }
 
 
-.ct-city.active .ct-popup {
+.ct-ward17.active .ct-popup {
     opacity: 1;
     display: inline-table;
     -webkit-transform: scale(1);
