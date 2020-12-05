@@ -1,0 +1,101 @@
+html, body, img, figure {
+    max-width: 100%;
+}
+
+
+.ct-map__section .container {
+    margin: auto;
+}
+.ct-u-padding-bottom-40 {
+    margin: auto;
+}
+.ct-map {
+    position: relative;
+    width: 562px;
+    margin-top: 55px;
+}
+
+.ct-city.stone {
+    top: 15%;
+    left: 37%;
+}
+
+.ct-popup {
+    background: #1aa6e2;
+    border-radius: 50%;
+    width: 334px;
+    height: 334px;
+    text-align: center;
+    color: white;
+    padding: 40px 40px 20px;
+    overflow: hidden;
+    -webkit-transform: scale(0);
+}
+
+.ct-popup__name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.ct-popup__content {
+    font-size: 16px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+
+.ct-city__button .ct-close {
+    display: none;
+}
+
+.ct-city.active .ct-city__button .ct-close {
+    display: block;
+}
+
+.ct-city.active .ct-city__button .ct-plus, .ct-city.active .ct-city__button .ct-city__name {
+    display: none;
+}
+
+.ct-city__name {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    width: 240px;
+    left: 44%;
+    margin-left: -120px;
+    margin-top: -9px;
+    font-family: 'Raleway', sans-serif;
+    color: #111f1d;
+    font-weight: 900;
+}
+
+
+.ct-city {
+    position: absolute;
+    width: 334px;
+    height: 334px;
+}
+
+.ct-city__button {
+    background: none;
+    border: none;
+    z-index: 30;
+    position: absolute;
+    top: 46%;
+    left: 12px;
+	outline: none;
+}
+
+
+.ct-city.active {
+	z-index: 30;
+}
+
+
+.ct-city.active .ct-popup {
+    opacity: 1;
+    display: inline-table;
+    -webkit-transform: scale(1);
+}
+

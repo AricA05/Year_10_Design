@@ -1,3 +1,8 @@
 body{
-	background-color: blue;
+	background-color: white;
+}
+
+.davenportdiv{
+	width:200%;
+	margin-top:-100%;
 }

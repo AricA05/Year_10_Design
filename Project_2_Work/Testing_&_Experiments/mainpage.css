@@ -1,0 +1,191 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+.navbar-toggler{
+	outline: none !important;
+	padding:0;
+}
+
+.navbar-toggler img{
+	width: 35px;
+}
+
+
+.navbar-brand img{
+	width:110px;
+}
+
+.nav-link{
+	
+	font-weight: 600;
+	margin-left: 30px;
+  font-family: Rancho
+
+}
+
+.wrapper{
+	margin: 50px auto;
+	border-radius: 10px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	box-shadow: 0 0 40px 2px rgb(153, 204, 255);
+}
+
+.feature-box{
+	padding: 30px;
+}
+
+.feature-box h1{
+	margin-top: 1%;
+	color:#5cd65c;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.feature-box p{
+	margin:50px auto;
+	color:#555;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+
+}
+
+.feature-box a{
+	text-decoration: none !important;
+	background: #99ccff;
+	border-radius: 20px;
+	padding: 10px 20px;
+	margin-right: 30px;
+	border: 2px solid #99ccff !important;
+	color:#5cd65c;
+}
+
+.btn-One:hover{
+	color:#555;
+}
+
+.btn-Two{
+	background: none !important;
+	color:#555;
+}
+
+.feature-img{
+	width:100%;
+	padding:40px;
+}
+
+
+.mapdiv{
+  width:100%;
+  margin-top:10%;
+}
+
+.mapdiv path{
+  stroke:#9ebcda;
+  stroke-width:0.3px;
+  transition: fill 0.3s;
+}
+
+.mapdiv :hover {
+  fill:#000;
+}
+
+
+
+.tennisballs img {
+  width:50px;
+  animation: tennisball 7s linear infinite;
+}
+
+.tennisballs{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: -70px;
+}
+
+@keyframes tennisball{
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
+
+.tennisballs img:nth-child(1){
+  animation-delay: 2s;
+  width:25px;
+}
+
+.tennisballs img:nth-child(2){
+  animation-delay: 1s;
+}
+
+.tennisballs img:nth-child(3){
+  animation-delay: 3.5s;
+  width:30px;
+}
+
+.tennisballs img:nth-child(4){
+  animation-delay: 5s;
+}
+
+.tennisballs img:nth-child(5){
+  animation-delay: 4.5s;
+}
+
+.tennisballs img:nth-child(6){
+  animation-delay: 2.5s;
+  width:20px;
+}
+
+.tennisballs img:nth-child(7){
+  animation-delay: 3;
+  width:35px;
+}
+
+.wave-img{
+  width:100%;
+  position:absolute;
+  display:block;
+  top:9%;
+  z-index:-1;
+  opacity:0.5;
+
+}
+
+.wave-imgno2{
+  width:100%;
+  position:absolute;
+  display:block;
+  top:70%;
+  z-index:-1;
+  opacity:0.5;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+ 
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+
+
