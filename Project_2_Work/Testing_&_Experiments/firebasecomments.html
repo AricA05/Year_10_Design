@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Comments</title>
+</head>
+
+<body>
+    <div id="allcomments">
+        <h3>Comments</h3>
+        <!-- We will show past comments in the list below-->
+        <ul id="pastcomments"></ul>
+        <!-- This is the form for entering a new comment -->
+        <form id="newcomment">
+            <label for="tbName">First Name or Initials</label>
+            <br>
+            <input id="tbName" type="text" maxlength="20" required>
+            <br>
+            <label for="txComment">Your Comment / Question</label>
+            <br>
+            <textarea id="txComment" maxlength="4096" required style="width:25%"></textarea>
+            <br>
+            <input type="submit" id="btnSubmitComment" value="Submit Comment">
+        </form>
+    </div>
+    <!-- Connection to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase - be sure to use your own code, this connects to my database.
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyADEtEFeJl5P8vjI5tqO4b9WO__r8Rfe-c",
+            authDomain: "comments-8a7f3.firebaseapp.com",
+            databaseURL: "https://comments-8a7f3-default-rtdb.firebaseio.com",
+            projectId: "comments-8a7f3",
+            storageBucket: "comments-8a7f3.appspot.com",
+            messagingSenderId: "800699276298",
+        };
+        firebase.initializeApp(config);
+        //Rootref is the whole database.
+        const rootRef = firebase.database().ref();
+        //commentsRef is just the pageCountsNode
+        const commentsRef = rootRef.child('comments');
+        //Listen for click on Submit Comment button, and post comment.
+        document.getElementById("btnSubmitComment").addEventListener("click", function () {
+            //Replace line breaks in comment with br tags.
+            var newcomment = document.getElementById('txComment').value.replace(/\n/g, "<br>");
+            //Define a new, keyed post.
+            var newPostRef = commentsRef.push();
+            //Fill tne new keyed post with data
+            newPostRef.set({
+                name: document.getElementById('tbName').value.trim(),
+                comment: newcomment.trim(),
+                frompage: location.pathname,
+                when: firebase.database.ServerValue.TIMESTAMP
+            });
+        });
+
+
+    </script>
+</body>
+</html>
