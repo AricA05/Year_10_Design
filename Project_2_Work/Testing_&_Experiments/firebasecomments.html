@@ -43,7 +43,7 @@
         firebase.initializeApp(config);
         //Rootref is the whole database.
         const rootRef = firebase.database().ref();
-        //commentsRef is just the pageCountsNode
+        //commentsRef is the pageCountsNode
         const commentsRef = rootRef.child('comments');
         //Listen for click on Submit Comment button, and post comment.
         document.getElementById("btnSubmitComment").addEventListener("click", function () {
@@ -52,6 +52,7 @@
             //Define a new, keyed post.
             var newPostRef = commentsRef.push();
             //Fill tne new keyed post with data
+            //all the below code is what get inputted into firebase
             newPostRef.set({
                 name: document.getElementById('tbName').value.trim(),
                 comment: newcomment.trim(),
@@ -62,5 +63,7 @@
 
 
     </script>
+
+
 </body>
 </html>
