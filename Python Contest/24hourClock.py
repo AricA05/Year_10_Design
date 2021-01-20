@@ -34,11 +34,11 @@ if 12 <= hour < 24:
 
 #Solution 2
 
-val = "09:12"
+currentTime = "00:00"
 
-h = int(val[:2])
+h = int(currentTime[:2])
 
-m = (val[-2:])
+m = (currentTime[-2:])
 
 timeOfDay = "AM"
 
@@ -46,5 +46,6 @@ timeOfDay = "AM"
 if 12 <= h <= 23:
 	timeOfDay = "PM";
 	h = h - 12
-	
-print(h,":",m," ",timeOfDay)
+if (h==0):
+	h=12
+print(str(h)+":"+m+" "+timeOfDay)
