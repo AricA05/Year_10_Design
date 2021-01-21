@@ -43,7 +43,7 @@
         firebase.initializeApp(config);
         //Rootref is the whole database.
         const rootRef = firebase.database().ref();
-        //commentsRef is the pageCountsNode
+        //commentsRef is defines the node where all the inputted comments will go
         const commentsRef = rootRef.child('comments');
         //Listen for click on Submit Comment button, and post comment.
         document.getElementById("btnSubmitComment").addEventListener("click", function () {
