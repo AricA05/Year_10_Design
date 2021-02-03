@@ -1,53 +1,62 @@
-//Step 1: Grab all the objects on the page I need for manipulation of the page
-
+//Step 1: I going grab all the objects on the page I need for manipulation of page
 const login_form = document.querySelector("#login_form")
-
-const login_nav = document.getElementById("login_nav")
+const login_nav = document.getElementById("login_nav") //if this id does not exist it is set to null
 const logout_nav = document.getElementById("logout_nav")
 const learn_more_nav = document.getElementById("learn_more_nav")
 const elements_nav = document.getElementById("elements_nav")
 
+const homecontent = document.getElementById("home_content")
+console.log(homecontent)
 
 
-var users = ["user1", "user2", "user3"]
-var pwords = ["pword1", "pword2", "pword3"]
+var users =["user1","user2","user3","user4"]
+var pwords = ["pword1","pword","pword3","pword4"]
+
+cuser = ""
+
+if (cuser === "") {
+	console.log("NO USER")
+}
+else {
+	console.log(cuser)
+}
 
 
+login_form.addEventListener("submit", (e) => {
+
+	console.log(e)
+	e.preventDefault() //Stops page from reloading
 
 
-login_form.addEventListener("submit",(e) => {
-	console.log(e.bubble)
-	e.preventDefault()
-
-
-	//Step 1: 
-	//Take form information
-	console.log(login_form)
 	user = login_form["user_name"].value
 	password = login_form["user_password"].value
 	console.log(user,password)
 
-	//Option 1: Veify against a predefined list - for learning
-	//WE ARE GOING TO AIM FOR THIS
-
-	//Take input from the submitted form and check to if the username and password are valid
-
 	//Step 2:
-	//Create flad valid = false
+	//Create flag valid = false
 	valid = false //BIG IDEA: Have a variable that validates a condidation I can act on later
-
-
 
 	//Step 3:
 	for (i = 0; i < users.length; i = i + 1) {
-
+		
 		if (users[i] === user) {
 
 			if (pwords[i] === password) {
-				valid = true //The user exists in the system
+				valid = true //The user exists in system
+				cuser = users[i]
+				if (cuser === "") {
+						console.log("NO USER")
+				}
+				else {
+					console.log(cuser)
+				}
+
 			}
 		}
-	}
+
+
+	} 
+
 
 	if (valid === true) {
 		login_nav.style.display = "none"
@@ -55,44 +64,42 @@ login_form.addEventListener("submit",(e) => {
 		learn_more_nav.style.display = "block"
 		elements_nav.style.display = "block"
 
+		homecontent.style.display = "block"
+
+
 	}
 	else {
-		  M.toast({html: 'I am a toast!'})
+		M.toast({html: 'Invalid User'})
 	}
-	//Loop through users to check for user
-		//if users[i] == user
-			//if pwords[i] == pword
-				//set valid to true
+	
 
-	//Step 4:
-	//if valid is true then you are going to change the diplsay
-	//if valid is false then tel
 
+
+
+	//Cleared and closed modal
 	//manually close modal
+	//General
 	const modal = document.querySelector('#login_modal'); 
-	//M is the materialze tol box that I have access to since I loaded the resources 
-	//Modal is the set tools inside M for modals 
-	//getInstance is a special function that I pass the modal object to 
+	//M is the materialize tool box that I have access to since I loaded the resources
+	//Modal is the set tools inside M for modals
+	//getInstance is a special function that I pass the modal object to
 	//close()
 	M.Modal.getInstance(modal).close();
-	//clears the content in the modal
+	//Clears the content in the modal
 	login_form.reset()
 
-
 });
 
-logout_nav.addEventListener("click", (e) => {
+logout_nav.addEventListener("click",(e) => {
 
-	//changed display back to navbar button
+	console.log(e)
+
+	//changed display states of nav bar buttons
 	login_nav.style.display = "block"
-	logout_nav.style.display = "none"
+	logout_nav.style.display = "none" //display the logout_nav button
 	learn_more_nav.style.display = "none"
 	elements_nav.style.display = "none"
-
+	cuser = ""
+	homecontent.style.display = "none"
 });
-
-
-
-
-
 
