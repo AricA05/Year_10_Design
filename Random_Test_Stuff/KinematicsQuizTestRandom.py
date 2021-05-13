@@ -6,45 +6,72 @@ while True:
 
     x = 0
     t = 0
-    v = round(random.uniform(20,20),2)
-    a = round(random.uniform(-0.10,-0.10),2)
+    v = round(random.uniform(3,112),2)
+    a = round(random.uniform(-0.10,-4.25),2)
     dt = 0.001
     
     
-    question = random.choice(["A driver is travelling East with a velocity (m/s) of " + str(v) + ", the driver is braking with an acceleration of " + str(a) + ", HOW LONG will it take for driver to come to a stop?", "A driver is travelling East with a velocity (m/s) of " + str(v) + ", the driver is braking with an acceleration of " + str(a) + ", HOW FAR did the driver go until car stopped?"])
-    print(question)
-    #print("A driver is travelling East with a velocity (m/s) of " + str(v) + ", the driver is braking with an acceleration of " + str(a) + ", how long will it take for driver to come to a stop?")
-        
-    answer = float(input("Answer:"))
-    
-    while v>0:
-        v=v+a*dt
-        x=x+v*dt
-        t=t+dt
-    
-    if answer != round(t,2) or round(x,2):
-        print("Correct. The correct answer is:" + str(round(x,2)))
-        #print("Score:",score,"points")
-        print("Restart Quiz")
-    else:
-        print("ok")
-        #break
-    '''elif answer == round(t,2) OR round(x,2):
-        #score += 1
-        print("Correct")'''
-    #else:
-     #   print("ok")
-        #print("Score:",score,"points")
-    '''elif answer == round(x,2):
-        print("correct")
-    elif answer != round(x,2):
-        print("incorrect")'''
+    question1 = "A driver is travelling East with a velocity (m/s) of " + str(v) + ", the driver is braking with an acceleration of " + str(a) + ", HOW LONG will it take for driver to come to a stop?"
+    question2 = "A driver is travelling East with a velocity (m/s) of " + str(v) + ", the driver is braking with an acceleration of " + str(a) + ", HOW FAR will the driver go until stop?"
 
-    #else:
-        #print("ok")
-    '''if answer != round(x,2):
-        print("Incorrect")
-    elif answer == round(x,2):
-        print("Correct")
+
+    GivenQuestion = random.choice([question1, question2])
+    print(GivenQuestion)
+    
+    def QuestionNum1():
+        answer = float(input("Answer:"))
+
+        global x
+        global t
+        global v
+        global a
+        global dt
+        global score
+
+        while v>0:
+            TA = -v/a
+        
+            if answer != round(TA,2):
+                print("Incorrect. The correct answer is:" + str(round(TA,2)))
+                print("Score:",score,"points")
+                print("Restart Quiz")
+                break
+            else:
+                score += 1
+                print("Correct")
+                print("Score:",score,"points")
+                break
+
+    def QuestionNum2():
+        answer = float(input("Answer:"))
+
+        global x
+        global t
+        global v
+        global a
+        global dt
+        global score
+
+        while v>0:
+            V2 = v*v
+            A2 = 2*a
+            XA = -V2/A2
+        
+            if answer != round(XA,2):
+                print("Incorrect. The correct answer is:" + str(round(XA,2)))
+                print("Score:",score,"points")
+                print("Restart Quiz")
+                break
+            else:
+                score += 1
+                print("Correct")
+                print("Score:",score,"points")
+                break
+
+
+
+    if GivenQuestion == question1:
+        QuestionNum1()
     else:
-        print("ok")'''
+        QuestionNum2()
+
